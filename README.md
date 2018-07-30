@@ -38,9 +38,9 @@ If you are ready to start just run;
 
 `npm run start -- --align ALIGNMENT_ID`
 
-of if you named your file something custom then simply run;
+or if you named your file something custom then simply run;
 
-`npm run start -- --file FILENAME`
+`npm run start -- --file FILENAME --align ALIGNMENT_ID`
 
 Example with code for alignment 342;
 
