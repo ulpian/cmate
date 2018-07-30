@@ -21,7 +21,7 @@ A tiny compiler for Javascript transformation code powered by webpack.
 - Watches for code changes
 - See Javascript errors before posting to the platform
 
-### Getting started
+## Getting started
 To get started simply download this repository as a `.zip` / `.tar` or alternatively you can clone through git.
 
 Once downloaded you will need to install dependencies through `npm` (Please check that you have the node and npm versions defined in the badges of this README);
@@ -55,7 +55,8 @@ Built at: 2018-07-30 13:11:03
 bundle.js  62.9 KiB    main  [emitted]  main
 ```
 
-### Watching
+
+## Watching
 This compiler is powered through webpack and it's default state is to watch, through this you can also see the size of your
 
 Once the code is compiled the output injection meta data such as;
@@ -65,16 +66,23 @@ Once the code is compiled the output injection meta data such as;
 // Dependency parent: ./src/319.js
 ```
 
-### Online
-You can easily connect with the Leverton platform by using your Leverton platform credentials. Just open up the `.env` file and fill in your **username** and **password**.
 
-### Gotcha's
+## Online
+You can easily connect with the Leverton platform by using your Leverton platform credentials.
+
+Just open up the `.env` file and fill in your **username** and **password**.
+
+Make sure you set the online flag by declaring `--online` when starting the compiler.
+
+
+## Gotcha's
 There a few things to watch out for when using this compiler;
 
 - Make sure to write es5!
 - Globally declared variables may conflict if they are called the same
 - `require`'ing node or javascript modules cause unforeseen conflicts.
 
-### Potential new features
+
+## Potential new features
 - Tests run through Nashorn javascript engine locally to catch any errors
 - Documentation generator (i.e [https://github.com/documentationjs/documentation](https://github.com/documentationjs/documentation))
