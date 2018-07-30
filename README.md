@@ -65,3 +65,4 @@ There a few things to watch out for when using this compiler;
 
 ### Potential new features
 - Tests run through Nashorn javascript engine locally to catch any errors
+- Documentation generator (i.e [https://github.com/documentationjs/documentation](https://github.com/documentationjs/documentation))
