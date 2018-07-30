@@ -1,3 +1,5 @@
+![club-mate logo](https://www.clubmate.jp/resources/img/logotext-header.png)
+
 # CMate
 **Compiled-Mate Pronounced (MAH-tay) like the drink Club-Mate**
 A tiny compiler for Javascript transformation code powered by webpack.
