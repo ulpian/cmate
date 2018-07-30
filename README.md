@@ -42,8 +42,18 @@ of if you named your file something custom then simply run;
 
 `npm run start -- --file FILENAME`
 
+Example with code for alignment 342;
 
-*You can view your file size upon every build when you save your files.*
+`npm start -- --align 342 --online`
+
+
+*You can view your file size upon every build when you save your files;*
+
+```bash
+Built at: 2018-07-30 13:11:03
+    Asset      Size  Chunks             Chunk Names
+bundle.js  62.9 KiB    main  [emitted]  main
+```
 
 ### Watching
 This compiler is powered through webpack and it's default state is to watch, through this you can also see the size of your
