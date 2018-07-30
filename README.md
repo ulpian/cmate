@@ -30,11 +30,11 @@ Once downloaded you will need to install dependencies through `npm` (Please chec
 
 You are now ready to go!
 
-All your files must be created within the `./src` directory. You can name your files either with just the alignment number or anything you like.
+All your files must be created within the `./src` directory. You can name your files either with just the alignment number or anything you like but you must declare the alignment id you are working on with `--align`.
 
 It is recommended that any code that is a module, re-usable function, library etc should be added to the `./modules` folder but this is optional.
 
-If you are ready to fo just run;
+If you are ready to start just run;
 
 `npm run start -- --align ALIGNMENT_ID`
 
