@@ -14,7 +14,7 @@ A tiny compiler for Javascript transformation code powered by webpack.
 - No duplication of code or dependencies (not matter how deep)
 - Automatically updates online behind-the-scenes (*only upon saving your file*)
 - Ability to execute offline - output to `./dist/bundle.js`
-- Works with any software
+- Works with any IDE software
 - Easily apply any linting
 - Works together with any webpack plugin or loader
 - Can be reverse-compiled
