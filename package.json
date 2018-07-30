@@ -1,0 +1,17 @@
+{
+	"name": "cmate",
+	"version": "0.0.1",
+	"description": "A javascript code compiler and bundler for Leverton AI transformation code integrator app.",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "node ./dist/bundle.js"
+	},
+	"author": "Ulpian Morina <ulpianmorina@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "^6.0.0",
+		"request": "^2.87.0",
+		"webpack": "^4.16.3"
+	}
+}
