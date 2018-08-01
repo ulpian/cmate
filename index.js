@@ -143,6 +143,9 @@ compile.watch({
 				}, (error, resp, body) => {
 					if (error) console.error(error);
 					body = JSON.parse(body);
+
+					if (body.length === 0) throw new Error('Error with getting alignment codeblock ID. Please restart compiler or check HTTP request.');
+
 					codeBlocksId = body[0].id;
 					// Update payload object
 					payload.id = codeBlocksId;
