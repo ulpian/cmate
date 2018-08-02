@@ -185,6 +185,9 @@ compile.watch({
 				} else {
 					console.log(resp.statusCode);
 					console.log(resp.headers['x-error-message']);
+
+					// Reset session cookies
+					sessionCookies = [];
 				}
 			});
 		} else {
