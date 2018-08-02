@@ -187,7 +187,7 @@ compile.watch({
 					console.log(resp.headers['x-error-message']);
 
 					// Reset session cookies
-					sessionCookies = [];
+					if (resp.statusCode !== 200) sessionCookies = [];
 				}
 			});
 		} else {
