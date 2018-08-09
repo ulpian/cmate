@@ -18,6 +18,9 @@ if (process.argv.indexOf('--file') !== -1) args.file = process.argv[process.argv
 // Offline status option - default false
 if (process.argv.indexOf('--online') !== -1) args.online = true;
 
+// Set entry file
+const entry = path.resolve(__dirname, "src", (args.align ? args.align : args.file) + ".js");
+
 // Code bundle
 let bundle = '';
 
@@ -29,16 +32,22 @@ class CMate {
 			// Each chunk manages the composition of a final rendered assets
 			compilation.chunks.forEach(chunk => {
 				// Modules represent each file and dependency
-				for (const module of chunk.modulesIterable) {
+
+				// Find and Start with initial source code from main file (issuer.id is 0 = no parent)
+				// _modules is a SortableSet
+				for (const m of chunk._modules) {
+					if (m.issuer && m.issuer.id === 0) bundle = m._source._value;
+				}
+
+				// Compile remaining source code
+				for (const module of chunk._modules) {
 					if (module._source) {
 						// Clean format the dependency name
 						let fileId = module.id.split(/\//gi);
 						fileId = fileId[fileId.length - 1];
 						fileId = fileId.replace(/\.js$/i,'') // If there is the .js suffix
 
-						if (module.issuer.id === 0) { // nothing depends on this file = main file
-							bundle = module._source._value;
-						} else {
+						if (module.issuer.id !== 0) {
 							// Match with bundle
 							const reqIndex = bundle.match(/require\((\'|\")[A-Za-z0-9.,\/\\\-\+\$\_\@\&]+(\'|\")\)\;/gi);
 
@@ -83,9 +92,6 @@ class CMate {
 
 // throw new Error('hey');
 if (!args.align && !args.file) throw new Error('Alignment (--align) must be declared, if file name is custom then a file (--file) must be declared.');
-
-// Set entry file
-const entry = path.resolve(__dirname, "src", (args.align ? args.align : args.file) + ".js");
 
 const wconfig = {
 	entry: [entry],
